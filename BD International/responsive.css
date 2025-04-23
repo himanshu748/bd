@@ -1,0 +1,717 @@
+/* Media Queries for Responsive Design */
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+    .logo a {
+        font-size: 1.3em;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 70%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out; /* Modified transition */
+        z-index: 99;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .burger {
+        display: block;
+        z-index: 100;
+        position: relative;
+        right: 0;
+        z-index: 1000;
+        display: block;
+        margin-right: 5px;
+    }
+
+    /* Hero Section */
+    #hero {
+        padding: 80px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+
+    .hero-slide .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-slide .hero-content p {
+        font-size: 1em;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content img {
+        width: 90%; /* Adjust image width */
+    }
+
+    .about-content .about-text {
+        width: 90%; /* Adjust text width */
+        margin: 0 auto; /* Center the text */
+    }
+
+    .about-content .about-text p {
+        text-align: left; /* Align the text to the left */
+        font-size: 1em; /* Adjust font size */
+        line-height: 1.6; /* Adjust line height */
+        margin-bottom: 25px; /* Add margin at the bottom */
+        word-spacing: normal; /* Reset word spacing */
+        hyphens: auto; /* Enable hyphenation */
+    }
+
+    /* Academics Section */
+    .academics-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .academic-program {
+        width: 90%;
+        margin: 0 auto 20px;
+        box-sizing: border-box;
+    }
+
+    #academics > h2, #academics > p {
+        text-align: center;
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Gallery Section */
+    .gallery-container img {
+        width: 300px;
+        height: 250px;
+    }
+
+    /* Gallery Section - Fix for mobile scrolling */
+    .gallery-container {
+        padding: 20px;
+        gap: 10px;
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory; /* Snap to each image when scrolling */
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .gallery-container a {
+        scroll-snap-align: center; /* Center each image when snapped */
+        flex: 0 0 auto;
+        width: 85%; /* Make slightly smaller than container for visual cue */
+    }
+    
+    .gallery-container img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+    }
+    
+    /* Add fade effect to indicate scrollable content */
+    #gallery {
+        position: relative;
+    }
+    
+    #gallery::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 40px;
+        background: linear-gradient(to right, transparent, rgba(245, 247, 250, 0.7));
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* Gallery Section - Fix for mobile alignment */
+    #gallery {
+        padding: 40px 0;
+    }
+    
+    .gallery-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+        width: 100%;
+        justify-content: center;
+        justify-items: center;
+    }
+    
+    .gallery-container a {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .gallery-container img {
+        width: 100%;
+        height: 220px;
+    }
+    
+    /* Remove the fade effect that might be causing issues */
+    #gallery::after {
+        content: none;
+    }
+
+    /* Alumni Section */
+    .alumni-stories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .alumni-story {
+        width: 80%;
+    }
+
+    /* Social Media Section */
+    .social-media-links {
+        gap: 20px;
+    }
+
+    .social-media-links a {
+        font-size: 1.5em;
+    }
+
+    /* General Section Styles */
+    section {
+        padding: 40px 20px;
+    }
+
+    section h2 {
+        font-size: 1.7em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center; /* Center items horizontally */
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .logo img {
+        height: 60px; /* Adjust logo height for mobile */
+    }
+
+    .logo span {
+        font-size: 0.7em; /* Adjust school name size for mobile */
+    }
+
+    /* Fix container widths to prevent overflow */
+    section {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Fix for overflow in full-width sections */
+    #about, #gallery, #admissions, #map, #enroll-form, #faculties, #academics, #events {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Fix for inner content padding */
+    #about > *, #gallery > *, #admissions > *, #map > *, 
+    #enroll-form > *, #faculties > *, #academics > h2, 
+    #academics > p, #events > h2 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Better container sizing */
+    .enrollment-container {
+        padding: 0 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Fix form container to prevent overflow */
+    .enrollment-form-container {
+        padding: 20px 15px;
+        width: 100%;
+    }
+    
+    /* Fix chatbot positioning for mobile */
+    .chatbot-container {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .chatbot-box {
+        width: 280px;
+        right: 0;
+        bottom: 70px;
+    }
+
+    /* Fix header positioning */
+    header {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Fix side margins on all sections */
+    section, #about, #academics, #events, #map, #faculties, #gallery, #enroll-form {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Fix container padding */
+    #about > *, #academics > *, #events > *, #map > *, 
+    #faculties > *, #gallery > * {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Tablet Devices */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+
+    /* Navigation */
+    nav {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .logo a {
+        font-size: 1.4em;
+    }
+
+    .nav-links li {
+        margin-left: 15px;
+    }
+
+    /* Hero Section */
+    #hero {
+        padding: 90px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.3em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    /* About Section */
+    .about-content {
+        gap: 20px;
+    }
+
+    .about-content img {
+        width: 50%;
+    }
+
+    /* Academics Section */
+    .academic-program {
+        width: 48%;
+    }
+
+    /* General Section Styles */
+    section {
+        padding: 50px 20px;
+    }
+
+    section h2 {
+        font-size: 1.9em;
+    }
+
+    section p {
+        font-size: 1.05em;
+    }
+
+    .logo img {
+        height: 45px; /* Adjust logo height for tablet */
+    }
+
+    .logo span {
+        font-size: 0.5em; /* Adjust school name size for tablet */
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: row; /* Restore row direction */
+        justify-content: space-around; /* Distribute items evenly */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .footer-section {
+        width: 30%; /* Adjust width */
+        text-align: left; /* Align text to the left */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .social-media-links {
+        justify-content: flex-start; /* Align to the left */
+        margin-left: 0; /* Reset margin */
+    }
+
+    /* Fix container widths to prevent overflow */
+    section {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Fix for overflow in full-width sections */
+    #about, #gallery, #admissions, #map, #enroll-form, #faculties, #academics, #events {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Fix for inner content padding */
+    #about > *, #gallery > *, #admissions > *, #map > *, 
+    #enroll-form > *, #faculties > *, #academics > h2, 
+    #academics > p, #events > h2 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Fix for enrollment form container */
+    .enrollment-container {
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    /* Fix sidebar layout to prevent overflow */
+    .enrollment-sidebar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .enrollment-process, .enrollment-info {
+        flex: 1 1 300px;
+    }
+    
+    /* Fix form container width */
+    .enrollment-form-container {
+        width: 100%;
+    }
+
+    /* Same fixes for tablet */
+    header {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    /* Remove the calc margins that cause overflow */
+    section, #about, #academics, #events, #map, #faculties, #gallery, #enroll-form {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* Laptop Devices */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .footer-content {
+        align-items: flex-start;
+        max-width: 1200px; /* Add max-width */
+        margin: 0 auto; /* Center the content */
+    }
+
+    .social-media-links {
+        justify-content: center; /* Center the content */
+        margin-left: 0; /* Reset margin */
+    }
+
+    .footer-section.social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section.social-media .social-media-links {
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    section {
+        max-width: 1400px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    .footer-content {
+        max-width: 1400px;
+        width: 100%;
+        padding: 0 40px;
+    }
+    
+    #hero, #academics, #events, footer {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+    
+    #academics > *, #events > *, .footer-content {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Extra Large Screens */
+@media screen and (min-width: 1441px) {
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    section {
+        max-width: 1600px;
+    }
+    
+    .footer-content {
+        max-width: 1600px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .logo img {
+        height: 60px; /* Adjust logo height for laptop */
+    }
+}
+
+/* Fix for right side white space on mobile and tablet views */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fix for all screen sizes */
+.footer-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fix for chatbot in responsive views */
+.chatbot-container {
+    max-width: 90vw;
+    right: 5vw;
+}
+
+.chatbot-box {
+    max-width: 90vw;
+}
+
+@media screen and (max-width: 400px) {
+    .chatbot-box {
+        right: -10px;
+        width: 280px;
+    }
+}
+
+/* Fix for cutting issues and overflow problems */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fix container width calculations */
+section, div, footer {
+    box-sizing: border-box;
+}
+
+/* Consistent chatbot positioning */
+.chatbot-container {
+    z-index: 9999;
+    max-width: 60px;
+}
+
+.chatbot-box {
+    max-width: 300px;
+}
+
+/* Fix for general width issues */
+.footer-content, .enrollment-container, #map, #enroll-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+/* Remove margin calc for sections to prevent overflow */
+@media screen and (max-width: 1024px) {
+    #about, #gallery, #admissions, #map, #enroll-form, #faculties, #academics, #events, footer {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: none !important;
+        box-sizing: border-box;
+    }
+}
+
+/* Fix for hamburger menu and white space issues */
+
+/* Core fix for white space and overflow */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fix for mobile views */
+@media screen and (max-width: 768px) {
+    /* Fix header positioning */
+    header {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Fix burger menu positioning */
+    nav {
+        width: 100%;
+        padding: 10px 15px;
+    }
+    
+    /* Ensure burger is fully visible */
+    .burger {
+        position: relative;
+        right: 0;
+        z-index: 1000;
+        display: block;
+        margin-right: 5px;
+    }
+    
+    /* Fix side margins on all sections */
+    section, #about, #academics, #events, #map, #faculties, #gallery, #enroll-form {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Fix container padding */
+    #about > *, #academics > *, #events > *, #map > *, 
+    #faculties > *, #gallery > * {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Fix for tablet views */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Same fixes for tablet */
+    header {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    nav {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    /* Remove the calc margins that cause overflow */
+    section, #about, #academics, #events, #map, #faculties, #gallery, #enroll-form {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* Fix enrollment form container in all views */
+.enrollment-container {
+    padding: 0 15px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+}
+
+/* Make sure all sections have proper box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
