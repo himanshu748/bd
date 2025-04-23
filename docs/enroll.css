@@ -1,0 +1,775 @@
+/* Enrollment Page Specific Styles */
+
+/* Banner Section - With responsive background images */
+#enroll-banner {
+    position: relative;
+    height: 300px;
+    background-image: url('./gallery1.jpg'); /* Default image for mobile with proper path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Use enrollmentpic.jpg for tablet and larger screens */
+@media screen and (min-width: 768px) {
+    #enroll-banner {
+        background-image: url('./enrollmentpic.jpg'); /* Proper path */
+        height: 350px; /* Slightly taller for larger screens */
+    }
+}
+
+/* Adjust banner height for even larger screens */
+@media screen and (min-width: 1025px) {
+    #enroll-banner {
+        height: 400px;
+    }
+}
+
+.enroll-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.enroll-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.enroll-banner-content h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.enroll-banner-content p {
+    font-size: 1.2em;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Enrollment Form Container */
+#enroll-form {
+    padding: 60px 0;
+    background-color: #f5f7fa;
+}
+
+.enrollment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Sidebar */
+.enrollment-sidebar {
+    flex: 1;
+    min-width: 280px;
+}
+
+.enrollment-process, .enrollment-info {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.enrollment-process h3, .enrollment-info h3 {
+    color: #4682B4;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.process-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.process-steps li {
+    margin-bottom: 18px;
+    padding: 10px 0;
+    padding-left: 50px;
+    position: relative;
+    color: #666;
+    font-weight: 500;
+    border-left: 2px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.process-steps li:last-child {
+    margin-bottom: 0;
+}
+
+.process-steps li.active {
+    color: #4682B4;
+    border-left: 2px solid #4682B4;
+}
+
+.step-number {
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 2px solid #ddd;
+    color: #777;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.process-steps li.active .step-number {
+    background-color: #4682B4;
+    color: white;
+    border-color: #4682B4;
+}
+
+.enrollment-info p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.enrollment-info a {
+    color: #4682B4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.enrollment-info a:hover {
+    color: #2a6496;
+    text-decoration: underline;
+}
+
+.enrollment-info i {
+    margin-right: 8px;
+    color: #4682B4;
+}
+
+/* Form Container */
+.enrollment-form-container {
+    flex: 2;
+    min-width: 320px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.enrollment-form-container h2 {
+    color: #4682B4;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.form-intro {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Form Progress */
+.form-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.form-progress::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #eee;
+    z-index: 0;
+}
+
+.progress-step {
+    position: relative;
+    text-align: center;
+    width: 33.33%;
+    color: #777;
+    font-weight: 500;
+    font-size: 0.9em;
+    z-index: 1;
+    padding-top: 30px;
+}
+
+.progress-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.progress-step::after {
+    content: attr(data-step);
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #777;
+    font-weight: bold;
+}
+
+.progress-step.active {
+    color: #4682B4;
+}
+
+.progress-step.active::before {
+    border-color: #4682B4;
+    background-color: #4682B4;
+}
+
+.progress-step.active::after {
+    color: white;
+}
+
+/* Multi-step Form */
+.multi-step-form {
+    position: relative;
+    min-height: 500px;
+}
+
+.form-step {
+    display: none;
+    width: 100%;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.3em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.form-section h3 i {
+    margin-right: 10px;
+    color: #4682B4;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #4682B4;
+    box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.1);
+    outline: none;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: #d9534f;
+    background-color: #fff5f5;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* Form Navigation */
+.form-navigation {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.next-btn, .prev-btn, .submit-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.next-btn, .submit-btn {
+    background-color: #4682B4;
+    color: white;
+}
+
+.next-btn:hover, .submit-btn:hover {
+    background-color: #3671a8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prev-btn {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.prev-btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prev-btn i, .next-btn i {
+    margin: 0 5px;
+}
+
+/* FAQ Section */
+#enrollment-faq {
+    padding: 60px 0;
+    background-color: white;
+}
+
+#enrollment-faq h2 {
+    text-align: center;
+    color: #4682B4;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.faq-toggle {
+    color: #4682B4;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    height: auto;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .enrollment-container {
+        flex-direction: column;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-progress {
+        flex-wrap: wrap;
+    }
+    
+    .progress-step {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .form-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .next-btn, .prev-btn, .submit-btn {
+        width: 100%;
+    }
+}
+
+/* Responsive Design - Improved tablet view */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Enrollment container adjustments */
+    .enrollment-container {
+        padding: 0 30px;
+        gap: 20px;
+    }
+
+    /* Better sidebar layout for tablets */
+    .enrollment-sidebar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .enrollment-process, .enrollment-info {
+        flex: 1;
+        min-width: 300px;
+        margin-bottom: 0;
+    }
+
+    /* Form container full width for tablets */
+    .enrollment-form-container {
+        width: 100%;
+        padding: 30px;
+    }
+
+    /* Improve progress steps in tablet view */
+    .form-progress {
+        margin-bottom: 30px;
+    }
+    
+    .progress-step {
+        font-size: 0.85em;
+    }
+
+    /* Form row adjustments for tablets */
+    .form-row {
+        flex-direction: row; /* Keep rows in tablet view */
+        gap: 15px;
+    }
+
+    /* Form buttons layout */
+    .form-navigation {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .prev-btn, .next-btn, .submit-btn {
+        padding: 10px 20px;
+        font-size: 0.95em;
+        width: auto;
+    }
+
+    /* FAQ section improvements */
+    .faq-container {
+        padding: 0 30px;
+    }
+
+    .faq-question h3 {
+        font-size: 1em;
+    }
+}
+
+/* Refinements for landscape tablet orientation */
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+    .enrollment-container {
+        max-width: 900px;
+    }
+    
+    .enrollment-process, .enrollment-info {
+        padding: 20px;
+    }
+    
+    /* Banner text size adjustments */
+    .enroll-banner-content h1 {
+        font-size: 2.5em;
+    }
+
+    .enroll-banner-content p {
+        font-size: 1.1em;
+    }
+}
+
+/* Responsive Design - Improved tablet view */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Overall container improvements */
+    #enroll-form {
+        padding: 40px 0;
+    }
+    
+    .enrollment-container {
+        padding: 0 20px;
+        gap: 30px;
+        max-width: 95%;
+    }
+
+    /* Better sidebar layout for tablets */
+    .enrollment-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .enrollment-process, .enrollment-info {
+        margin-bottom: 0;
+        height: 100%;
+        min-height: 200px;
+    }
+    
+    /* Process steps adjustments */
+    .process-steps li {
+        padding: 8px 0 8px 40px;
+        font-size: 0.95em;
+    }
+    
+    .step-number {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9em;
+    }
+
+    /* Form container improvements */
+    .enrollment-form-container {
+        width: 100%;
+        padding: 25px;
+        margin-top: 0;
+    }
+    
+    .enrollment-form-container h2 {
+        font-size: 1.7em;
+        margin-bottom: 15px;
+    }
+    
+    .form-intro {
+        font-size: 0.95em;
+        margin-bottom: 25px;
+    }
+
+    /* Progress steps improvements */
+    .form-progress {
+        margin-bottom: 30px;
+    }
+    
+    .progress-step {
+        font-size: 0.85em;
+    }
+    
+    .progress-step::before {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .progress-step::after {
+        top: 4px;
+        font-size: 0.9em;
+    }
+
+    /* Form adjustments */
+    .form-section h3 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    
+    label {
+        font-size: 0.95em;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+
+    /* Form row adjustments for tablets */
+    .form-row {
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    .multi-step-form {
+        min-height: 450px;
+    }
+
+    /* Form buttons layout */
+    .form-navigation {
+        margin-top: 30px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .next-btn, .prev-btn, .submit-btn {
+        padding: 10px 20px;
+        font-size: 0.95em;
+        width: auto;
+        min-width: 120px;
+    }
+
+    /* FAQ section improvements */
+    #enrollment-faq {
+        padding: 40px 0;
+    }
+    
+    #enrollment-faq h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    
+    .faq-container {
+        padding: 0 25px;
+        max-width: 95%;
+    }
+
+    .faq-question {
+        padding: 15px 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1em;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 15px 20px;
+    }
+}
+
+/* Refinements for different tablet orientations */
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    /* Portrait tablet adjustments */
+    .enrollment-sidebar {
+        grid-template-columns: 1fr;  /* Stack in portrait mode */
+    }
+    
+    /* Form adjustments for smaller tablets */
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .enrollment-form-container {
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1024px) {
+    /* Landscape tablet specific adjustments */
+    .enrollment-container {
+        max-width: 900px;
+    }
+    
+    .enrollment-process, .enrollment-info {
+        padding: 20px;
+    }
+    
+    /* Banner text size adjustments */
+    .enroll-banner-content h1 {
+        font-size: 2.5em;
+    }
+
+    .enroll-banner-content p {
+        font-size: 1.1em;
+    }
+}
+
+/* Ensure form fields are properly sized on all tablet screens */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    /* Enhance touch targets for tablet users */
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .checkbox-group label {
+        padding: 3px 0;
+    }
+}
